@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -31,6 +32,18 @@ public class Main {
 
             lower--;
             higher++;
+        }
+    }
+
+    public static Boolean piatka(String anagram, String anagram2) {
+        char[] znaki1 = anagram.toCharArray();
+        char[] znaki2 = anagram2.toCharArray();
+        Arrays.sort(znaki1);
+        Arrays.sort(znaki2);
+        if (znaki1 == znaki2) {
+            return Boolean.TRUE;
+        } else {
+            return Boolean.FALSE;
         }
     }
 
@@ -70,11 +83,20 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("zrób coś2");
+                    System.out.println("zrób coś3");
                     break;
 
                 case 5:
-                    System.out.println("zrób coś3");
+                    System.out.println("Wpisz pierwsze słowo");
+                    String anagram = klawiatura.nextLine();
+                    System.out.println("Wpisz drugie słowo");
+                    String anagram2 = klawiatura.nextLine();
+                    if ((piatka(anagram, anagram2) == Boolean.FALSE)) {
+                        System.out.println("Te słowa sa anagramami");
+                    }
+                    if ((piatka(anagram, anagram2) == Boolean.TRUE)) {
+                        System.out.println("Te słowa nie sa anagramami");
+                    }
                     break;
 
                 case 6:
